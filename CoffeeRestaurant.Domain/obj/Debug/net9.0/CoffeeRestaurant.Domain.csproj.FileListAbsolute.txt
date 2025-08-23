@@ -10,3 +10,4 @@ D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Domain\obj\Debug\net9.0\Co
 D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Domain\obj\Debug\net9.0\refint\CoffeeRestaurant.Domain.dll
 D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Domain\obj\Debug\net9.0\CoffeeRestaurant.Domain.pdb
 D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Domain\obj\Debug\net9.0\ref\CoffeeRestaurant.Domain.dll
+D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Domain\obj\Debug\net9.0\CoffeeRestaurant.Domain.sourcelink.json
