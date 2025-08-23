@@ -15,3 +15,4 @@ D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Application\obj\Debug\net9
 D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Application\obj\Debug\net9.0\refint\CoffeeRestaurant.Application.dll
 D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Application\obj\Debug\net9.0\CoffeeRestaurant.Application.pdb
 D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Application\obj\Debug\net9.0\ref\CoffeeRestaurant.Application.dll
+D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Application\obj\Debug\net9.0\CoffeeRestaurant.Application.sourcelink.json
