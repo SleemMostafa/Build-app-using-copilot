@@ -1,0 +1,494 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Api\\CoffeeRestaurant.Api.csproj": {}
+  },
+  "projects": {
+    "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Api\\CoffeeRestaurant.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Api\\CoffeeRestaurant.Api.csproj",
+        "projectName": "CoffeeRestaurant.Api",
+        "projectPath": "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Api\\CoffeeRestaurant.Api.csproj",
+        "packagesPath": "C:\\Users\\Saleem\\.nuget\\packages\\",
+        "outputPath": "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Api\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Saleem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Application\\CoffeeRestaurant.Application.csproj": {
+                "projectPath": "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Application\\CoffeeRestaurant.Application.csproj"
+              },
+              "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Infrastructure\\CoffeeRestaurant.Infrastructure.csproj": {
+                "projectPath": "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Infrastructure\\CoffeeRestaurant.Infrastructure.csproj"
+              },
+              "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Persistence\\CoffeeRestaurant.Persistence.csproj": {
+                "projectPath": "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Persistence\\CoffeeRestaurant.Persistence.csproj"
+              },
+              "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Shared\\CoffeeRestaurant.Shared.csproj": {
+                "projectPath": "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Shared\\CoffeeRestaurant.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerGen": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Application\\CoffeeRestaurant.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Application\\CoffeeRestaurant.Application.csproj",
+        "projectName": "CoffeeRestaurant.Application",
+        "projectPath": "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Application\\CoffeeRestaurant.Application.csproj",
+        "packagesPath": "C:\\Users\\Saleem\\.nuget\\packages\\",
+        "outputPath": "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Saleem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Domain\\CoffeeRestaurant.Domain.csproj": {
+                "projectPath": "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Domain\\CoffeeRestaurant.Domain.csproj"
+              },
+              "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Shared\\CoffeeRestaurant.Shared.csproj": {
+                "projectPath": "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Shared\\CoffeeRestaurant.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[13.0.0, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.1.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Domain\\CoffeeRestaurant.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Domain\\CoffeeRestaurant.Domain.csproj",
+        "projectName": "CoffeeRestaurant.Domain",
+        "projectPath": "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Domain\\CoffeeRestaurant.Domain.csproj",
+        "packagesPath": "C:\\Users\\Saleem\\.nuget\\packages\\",
+        "outputPath": "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Saleem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[9.0.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Infrastructure\\CoffeeRestaurant.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Infrastructure\\CoffeeRestaurant.Infrastructure.csproj",
+        "projectName": "CoffeeRestaurant.Infrastructure",
+        "projectPath": "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Infrastructure\\CoffeeRestaurant.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Saleem\\.nuget\\packages\\",
+        "outputPath": "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Saleem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Application\\CoffeeRestaurant.Application.csproj": {
+                "projectPath": "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Application\\CoffeeRestaurant.Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[9.0.8, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.13.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Persistence\\CoffeeRestaurant.Persistence.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Persistence\\CoffeeRestaurant.Persistence.csproj",
+        "projectName": "CoffeeRestaurant.Persistence",
+        "projectPath": "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Persistence\\CoffeeRestaurant.Persistence.csproj",
+        "packagesPath": "C:\\Users\\Saleem\\.nuget\\packages\\",
+        "outputPath": "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Persistence\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Saleem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Application\\CoffeeRestaurant.Application.csproj": {
+                "projectPath": "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Application\\CoffeeRestaurant.Application.csproj"
+              },
+              "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Domain\\CoffeeRestaurant.Domain.csproj": {
+                "projectPath": "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Domain\\CoffeeRestaurant.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Shared\\CoffeeRestaurant.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Shared\\CoffeeRestaurant.Shared.csproj",
+        "projectName": "CoffeeRestaurant.Shared",
+        "projectPath": "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Shared\\CoffeeRestaurant.Shared.csproj",
+        "packagesPath": "C:\\Users\\Saleem\\.nuget\\packages\\",
+        "outputPath": "D:\\SelfStydy\\Build-app-using-copilot\\CoffeeRestaurant.Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Saleem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

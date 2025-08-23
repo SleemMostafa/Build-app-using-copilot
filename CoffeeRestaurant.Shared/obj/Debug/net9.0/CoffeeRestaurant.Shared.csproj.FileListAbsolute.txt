@@ -1,0 +1,11 @@
+D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Shared\obj\Debug\net9.0\CoffeeRestaurant.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Shared\obj\Debug\net9.0\CoffeeRestaurant.Shared.AssemblyInfoInputs.cache
+D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Shared\obj\Debug\net9.0\CoffeeRestaurant.Shared.AssemblyInfo.cs
+D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Shared\obj\Debug\net9.0\CoffeeRestaurant.Shared.csproj.CoreCompileInputs.cache
+D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Shared\bin\Debug\net9.0\CoffeeRestaurant.Shared.deps.json
+D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Shared\bin\Debug\net9.0\CoffeeRestaurant.Shared.dll
+D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Shared\bin\Debug\net9.0\CoffeeRestaurant.Shared.pdb
+D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Shared\obj\Debug\net9.0\CoffeeRestaurant.Shared.dll
+D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Shared\obj\Debug\net9.0\refint\CoffeeRestaurant.Shared.dll
+D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Shared\obj\Debug\net9.0\CoffeeRestaurant.Shared.pdb
+D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Shared\obj\Debug\net9.0\ref\CoffeeRestaurant.Shared.dll

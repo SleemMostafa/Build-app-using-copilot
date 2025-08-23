@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="9.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CoffeeRestaurant.Application\CoffeeRestaurant.Application.csproj" />
+    <ProjectReference Include="..\CoffeeRestaurant.Infrastructure\CoffeeRestaurant.Infrastructure.csproj" />
+    <ProjectReference Include="..\CoffeeRestaurant.Persistence\CoffeeRestaurant.Persistence.csproj" />
+    <ProjectReference Include="..\CoffeeRestaurant.Shared\CoffeeRestaurant.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

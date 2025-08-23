@@ -1,0 +1,17 @@
+D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Application\bin\Debug\net9.0\CoffeeRestaurant.Application.deps.json
+D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Application\bin\Debug\net9.0\CoffeeRestaurant.Application.dll
+D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Application\bin\Debug\net9.0\CoffeeRestaurant.Application.pdb
+D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Application\bin\Debug\net9.0\CoffeeRestaurant.Domain.dll
+D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Application\bin\Debug\net9.0\CoffeeRestaurant.Shared.dll
+D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Application\bin\Debug\net9.0\CoffeeRestaurant.Domain.pdb
+D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Application\bin\Debug\net9.0\CoffeeRestaurant.Shared.pdb
+D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Application\obj\Debug\net9.0\CoffeeRestaurant.Application.csproj.AssemblyReference.cache
+D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Application\obj\Debug\net9.0\CoffeeRestaurant.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Application\obj\Debug\net9.0\CoffeeRestaurant.Application.AssemblyInfoInputs.cache
+D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Application\obj\Debug\net9.0\CoffeeRestaurant.Application.AssemblyInfo.cs
+D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Application\obj\Debug\net9.0\CoffeeRestaurant.Application.csproj.CoreCompileInputs.cache
+D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Application\obj\Debug\net9.0\CoffeeRe.BD032FB0.Up2Date
+D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Application\obj\Debug\net9.0\CoffeeRestaurant.Application.dll
+D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Application\obj\Debug\net9.0\refint\CoffeeRestaurant.Application.dll
+D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Application\obj\Debug\net9.0\CoffeeRestaurant.Application.pdb
+D:\SelfStydy\Build-app-using-copilot\CoffeeRestaurant.Application\obj\Debug\net9.0\ref\CoffeeRestaurant.Application.dll
