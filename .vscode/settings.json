@@ -1,0 +1,42 @@
+{
+  "github.copilot.chat.mcp.enabled": true,
+  "github.copilot.chat.mcp.servers": {
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "e:\\SelfStydy\\Build-app-using-copilot"
+      ]
+    },
+    "database": {
+      "command": "node",
+      "args": [
+        "${workspaceFolder}\\.mcp\\servers\\database-server.js"
+      ],
+      "env": {
+        "DB_HOST": "localhost",
+        "DB_NAME": "CoffeeRestaurantDb",
+        "DB_USER": "sa",
+        "DB_PASSWORD": "YourStrong@Passw0rd"
+      }
+    },
+    "api-tester": {
+      "command": "node",
+      "args": [
+        "${workspaceFolder}\\.mcp\\servers\\api-tester-server.js"
+      ],
+      "env": {
+        "API_BASE_URL": "https://localhost:7001",
+        "API_TIMEOUT": "30000"
+      }
+    },
+    "docker": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-docker"
+      ]
+    }
+  }
+}

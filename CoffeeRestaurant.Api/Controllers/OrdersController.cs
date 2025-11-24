@@ -1,7 +1,6 @@
 using CoffeeRestaurant.Application.Orders.Commands.CreateOrder;
 using CoffeeRestaurant.Application.Orders.Queries.GetOrders;
 using CoffeeRestaurant.Shared.Common;
-using CoffeeRestaurant.Shared.DTOs;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -21,17 +20,17 @@ public class OrdersController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<ApiResponse<List<OrderDto>>>> GetOrders()
+    public async Task<ActionResult<ApiResponse<List<GetOrdersResponse>>>> GetOrders()
     {
         var query = new GetOrdersQuery();
         var result = await _mediator.Send(query);
-        return Ok(ApiResponse<List<OrderDto>>.SuccessResult(result));
+        return Ok(ApiResponse<List<GetOrdersResponse>>.SuccessResult(result));
     }
 
     [HttpPost]
-    public async Task<ActionResult<ApiResponse<OrderDto>>> CreateOrder(CreateOrderCommand command)
+    public async Task<ActionResult<ApiResponse<CreateOrderResponse>>> CreateOrder(CreateOrderCommand command)
     {
         var result = await _mediator.Send(command);
-        return Ok(ApiResponse<OrderDto>.SuccessResult(result, "Order created successfully."));
+        return Ok(ApiResponse<CreateOrderResponse>.SuccessResult(result, "Order created successfully."));
     }
 }

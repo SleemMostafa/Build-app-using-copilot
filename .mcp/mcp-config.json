@@ -1,0 +1,46 @@
+{
+  "$schema": "https://modelcontextprotocol.io/schema/mcp-config.json",
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "e:\\SelfStydy\\Build-app-using-copilot"
+      ],
+      "description": "Provides file system access to the Coffee Restaurant API project"
+    },
+    "database": {
+      "command": "node",
+      "args": [
+        "e:\\SelfStydy\\Build-app-using-copilot\\.mcp\\servers\\database-server.js"
+      ],
+      "env": {
+        "DB_HOST": "localhost",
+        "DB_NAME": "CoffeeRestaurantDb",
+        "DB_USER": "sa",
+        "DB_PASSWORD": "YourStrong@Passw0rd"
+      },
+      "description": "SQL Server database access for querying coffee items, orders, customers, and categories"
+    },
+    "api-tester": {
+      "command": "node",
+      "args": [
+        "e:\\SelfStydy\\Build-app-using-copilot\\.mcp\\servers\\api-tester-server.js"
+      ],
+      "env": {
+        "API_BASE_URL": "https://localhost:7001",
+        "API_TIMEOUT": "30000"
+      },
+      "description": "Automated API endpoint testing and validation for Coffee Restaurant API"
+    },
+    "docker": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-docker"
+      ],
+      "description": "Docker container management - inspect, start, stop containers and view logs"
+    }
+  }
+}

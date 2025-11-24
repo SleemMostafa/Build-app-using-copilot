@@ -116,7 +116,7 @@ builder.Services.AddValidatorsFromAssembly(typeof(CoffeeRestaurant.Application.C
 // Add MediatR Behaviors
 builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
 
-// Manual mapping is used instead of AutoMapper
+// Response classes are defined in each command/query file
 
 // Add Application Services
 builder.Services.AddScoped<IApplicationDbContext>(provider => provider.GetRequiredService<CoffeeDbContext>());

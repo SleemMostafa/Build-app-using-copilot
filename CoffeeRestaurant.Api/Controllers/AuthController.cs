@@ -1,8 +1,6 @@
 using CoffeeRestaurant.Domain.Entities;
 using CoffeeRestaurant.Infrastructure.Services;
 using CoffeeRestaurant.Shared.Common;
-using CoffeeRestaurant.Shared.DTOs;
-using CoffeeRestaurant.Infrastructure.Mappers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -28,12 +26,12 @@ public class AuthController : ControllerBase
     }
 
     [HttpPost("register")]
-    public async Task<ActionResult<ApiResponse<LoginResponse>>> Register(RegisterRequest request)
+    public async Task<ActionResult<ApiResponse<RegisterResponse>>> Register(RegisterRequest request)
     {
         var existingUser = await _userManager.FindByEmailAsync(request.Email);
         if (existingUser != null)
         {
-            return BadRequest(ApiResponse<LoginResponse>.ErrorResult("User with this email already exists."));
+            return BadRequest(ApiResponse<RegisterResponse>.ErrorResult("User with this email already exists."));
         }
 
         var user = new ApplicationUser
@@ -51,7 +49,7 @@ public class AuthController : ControllerBase
         if (!result.Succeeded)
         {
             var errors = result.Errors.Select(e => e.Description).ToList();
-            return BadRequest(ApiResponse<LoginResponse>.ErrorResult("Registration failed.", errors));
+            return BadRequest(ApiResponse<RegisterResponse>.ErrorResult("Registration failed.", errors));
         }
 
         // Add to Customer role by default
@@ -61,14 +59,23 @@ public class AuthController : ControllerBase
         var roles = await _userManager.GetRolesAsync(user);
         var token = _jwtService.GenerateToken(user, roles);
 
-        var response = user.ToLoginResponse(
-            token,
-            "refresh-token-placeholder", // In a real app, implement refresh tokens
-            DateTime.UtcNow.AddHours(24),
-            roles.ToList()
-        );
+        var response = new RegisterResponse
+        {
+            Token = token,
+            RefreshToken = "refresh-token-placeholder",
+            ExpiresAt = DateTime.UtcNow.AddHours(24),
+            User = new UserInfo
+            {
+                Id = user.Id,
+                Email = user.Email ?? string.Empty,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                PhoneNumber = user.PhoneNumber,
+                Roles = roles.ToList()
+            }
+        };
 
-        return Ok(ApiResponse<LoginResponse>.SuccessResult(response, "Registration successful."));
+        return Ok(ApiResponse<RegisterResponse>.SuccessResult(response, "Registration successful."));
     }
 
     [HttpPost("login")]
@@ -95,42 +102,92 @@ public class AuthController : ControllerBase
         var roles = await _userManager.GetRolesAsync(user);
         var token = _jwtService.GenerateToken(user, roles);
 
-        var response = user.ToLoginResponse(
-            token,
-            "refresh-token-placeholder", // In a real app, implement refresh tokens
-            DateTime.UtcNow.AddHours(24),
-            roles.ToList()
-        );
+        var response = new LoginResponse
+        {
+            Token = token,
+            RefreshToken = "refresh-token-placeholder",
+            ExpiresAt = DateTime.UtcNow.AddHours(24),
+            User = new UserInfo
+            {
+                Id = user.Id,
+                Email = user.Email ?? string.Empty,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                PhoneNumber = user.PhoneNumber,
+                Roles = roles.ToList()
+            }
+        };
 
         return Ok(ApiResponse<LoginResponse>.SuccessResult(response, "Login successful."));
     }
 
     [Authorize]
     [HttpGet("me")]
-    public async Task<ActionResult<ApiResponse<UserDto>>> GetCurrentUser()
+    public async Task<ActionResult<ApiResponse<CurrentUserResponse>>> GetCurrentUser()
     {
         var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
         if (string.IsNullOrEmpty(userId))
         {
-            return Unauthorized(ApiResponse<UserDto>.ErrorResult("User not authenticated."));
+            return Unauthorized(ApiResponse<CurrentUserResponse>.ErrorResult("User not authenticated."));
         }
 
         var user = await _userManager.FindByIdAsync(userId);
         if (user == null)
         {
-            return NotFound(ApiResponse<UserDto>.ErrorResult("User not found."));
+            return NotFound(ApiResponse<CurrentUserResponse>.ErrorResult("User not found."));
         }
 
         var roles = await _userManager.GetRolesAsync(user);
-        var userDto = new UserDto(
-            user.Id,
-            user.Email ?? string.Empty,
-            user.FirstName,
-            user.LastName,
-            user.PhoneNumber,
-            roles.ToList()
-        );
+        var response = new CurrentUserResponse
+        {
+            Id = user.Id,
+            Email = user.Email ?? string.Empty,
+            FirstName = user.FirstName,
+            LastName = user.LastName,
+            PhoneNumber = user.PhoneNumber,
+            Roles = roles.ToList()
+        };
 
-        return Ok(ApiResponse<UserDto>.SuccessResult(userDto));
+        return Ok(ApiResponse<CurrentUserResponse>.SuccessResult(response));
     }
+}
+
+// Request/Response models
+public record RegisterRequest(string Email, string Password, string FirstName, string LastName, string? PhoneNumber);
+public record LoginRequest(string Email, string Password);
+
+public record RegisterResponse
+{
+    public string Token { get; init; } = string.Empty;
+    public string RefreshToken { get; init; } = string.Empty;
+    public DateTime ExpiresAt { get; init; }
+    public UserInfo User { get; init; } = null!;
+}
+
+public record LoginResponse
+{
+    public string Token { get; init; } = string.Empty;
+    public string RefreshToken { get; init; } = string.Empty;
+    public DateTime ExpiresAt { get; init; }
+    public UserInfo User { get; init; } = null!;
+}
+
+public record CurrentUserResponse
+{
+    public string Id { get; init; } = string.Empty;
+    public string Email { get; init; } = string.Empty;
+    public string FirstName { get; init; } = string.Empty;
+    public string LastName { get; init; } = string.Empty;
+    public string? PhoneNumber { get; init; }
+    public List<string> Roles { get; init; } = new();
+}
+
+public record UserInfo
+{
+    public string Id { get; init; } = string.Empty;
+    public string Email { get; init; } = string.Empty;
+    public string FirstName { get; init; } = string.Empty;
+    public string LastName { get; init; } = string.Empty;
+    public string? PhoneNumber { get; init; }
+    public List<string> Roles { get; init; } = new();
 }

@@ -1,13 +1,11 @@
 using CoffeeRestaurant.Application.Common.Interfaces;
 using CoffeeRestaurant.Domain.Entities;
-using CoffeeRestaurant.Shared.DTOs;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using OrderStatus = CoffeeRestaurant.Domain.Entities.OrderStatus;
 
 namespace CoffeeRestaurant.Application.Orders.Commands.CreateOrder;
 
-public record CreateOrderCommand : IRequest<OrderDto>
+public record CreateOrderCommand : IRequest<CreateOrderResponse>
 {
     public Guid CustomerId { get; init; }
     public List<CreateOrderItemRequest> OrderItems { get; init; } = new();
@@ -21,7 +19,7 @@ public record CreateOrderItemRequest
     public string? SpecialInstructions { get; init; }
 }
 
-public class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommand, OrderDto>
+public class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommand, CreateOrderResponse>
 {
     private readonly IApplicationDbContext _context;
 
@@ -30,7 +28,7 @@ public class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommand, Ord
         _context = context;
     }
 
-    public async Task<OrderDto> Handle(CreateOrderCommand request, CancellationToken cancellationToken)
+    public async Task<CreateOrderResponse> Handle(CreateOrderCommand request, CancellationToken cancellationToken)
     {
         // Get coffee items to calculate prices
         var coffeeItemIds = request.OrderItems.Select(oi => oi.CoffeeItemId).ToList();
@@ -78,33 +76,48 @@ public class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommand, Ord
         _context.Orders.Add(order);
         await _context.SaveChangesAsync(cancellationToken);
 
-        // In a real application, you would use AutoMapper here
-        return new OrderDto
+        return new CreateOrderResponse
         {
             Id = order.Id,
             CustomerId = order.CustomerId,
-            BaristaId = order.BaristaId,
             OrderDate = order.OrderDate,
             TotalPrice = order.TotalPrice,
-            Status = Shared.DTOs.OrderStatus.Pending,
+            Status = order.Status.ToString(),
             Notes = order.Notes,
             CreatedAt = order.CreatedAt,
-            UpdatedAt = order.UpdatedAt,
-            Customer = new CustomerDto(), // This would be loaded from DB
-            Barista = null,
-            OrderItems = orderItems.Select(oi => new OrderItemDto
+            OrderItems = orderItems.Select(oi => new CreateOrderItemResponse
             {
                 Id = oi.Id,
-                OrderId = oi.OrderId,
                 CoffeeItemId = oi.CoffeeItemId,
+                CoffeeItemName = coffeeItems[oi.CoffeeItemId].Name,
                 Quantity = oi.Quantity,
                 UnitPrice = oi.UnitPrice,
                 Subtotal = oi.Subtotal,
-                SpecialInstructions = oi.SpecialInstructions,
-                CreatedAt = oi.CreatedAt,
-                UpdatedAt = oi.UpdatedAt,
-                CoffeeItem = new CoffeeItemDto() // This would be loaded from DB
+                SpecialInstructions = oi.SpecialInstructions
             }).ToList()
         };
     }
+}
+
+public record CreateOrderResponse
+{
+    public Guid Id { get; init; }
+    public Guid CustomerId { get; init; }
+    public DateTime OrderDate { get; init; }
+    public decimal TotalPrice { get; init; }
+    public string Status { get; init; } = string.Empty;
+    public string? Notes { get; init; }
+    public DateTime CreatedAt { get; init; }
+    public List<CreateOrderItemResponse> OrderItems { get; init; } = new();
+}
+
+public record CreateOrderItemResponse
+{
+    public Guid Id { get; init; }
+    public Guid CoffeeItemId { get; init; }
+    public string CoffeeItemName { get; init; } = string.Empty;
+    public int Quantity { get; init; }
+    public decimal UnitPrice { get; init; }
+    public decimal Subtotal { get; init; }
+    public string? SpecialInstructions { get; init; }
 }

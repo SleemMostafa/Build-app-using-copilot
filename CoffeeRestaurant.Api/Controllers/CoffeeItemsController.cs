@@ -1,7 +1,6 @@
 using CoffeeRestaurant.Application.CoffeeItems.Commands.CreateCoffeeItem;
 using CoffeeRestaurant.Application.CoffeeItems.Queries.GetCoffeeItems;
 using CoffeeRestaurant.Shared.Common;
-using CoffeeRestaurant.Shared.DTOs;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -20,18 +19,18 @@ public class CoffeeItemsController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<ApiResponse<List<CoffeeItemDto>>>> GetCoffeeItems()
+    public async Task<ActionResult<ApiResponse<List<GetCoffeeItemsResponse>>>> GetCoffeeItems()
     {
         var query = new GetCoffeeItemsQuery();
         var result = await _mediator.Send(query);
-        return Ok(ApiResponse<List<CoffeeItemDto>>.SuccessResult(result));
+        return Ok(ApiResponse<List<GetCoffeeItemsResponse>>.SuccessResult(result));
     }
 
     [HttpPost]
     [Authorize(Roles = "Admin")]
-    public async Task<ActionResult<ApiResponse<CoffeeItemDto>>> CreateCoffeeItem(CreateCoffeeItemCommand command)
+    public async Task<ActionResult<ApiResponse<CreateCoffeeItemResponse>>> CreateCoffeeItem(CreateCoffeeItemCommand command)
     {
         var result = await _mediator.Send(command);
-        return Ok(ApiResponse<CoffeeItemDto>.SuccessResult(result, "Coffee item created successfully."));
+        return Ok(ApiResponse<CreateCoffeeItemResponse>.SuccessResult(result, "Coffee item created successfully."));
     }
 }

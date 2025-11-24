@@ -1,6 +1,6 @@
 # Coffee Restaurant API
 
-A .NET 9 Web API project for a coffee restaurant built using Clean Architecture principles.
+A .NET 10 Web API project for a coffee restaurant built using Clean Architecture principles.
 
 ## 🏗️ Architecture
 
@@ -17,16 +17,17 @@ This project follows Clean Architecture with the following layers:
 
 - **ASP.NET Core Identity** with JWT Bearer authentication
 - **CQRS Pattern** using MediatR
+- **Response Classes** - each command/query defines its own response type
 - **FluentValidation** for request validation
 - **Entity Framework Core** with SQL Server
-- **Manual Mapping** with extension methods for object mapping
+- **EF Core Projections** for optimized query performance
 - **Swagger/OpenAPI** documentation
 - **Docker** support
 - **Role-based Authorization** (Admin, Barista, Customer)
 
 ## 📋 Prerequisites
 
-- .NET 9 SDK
+- .NET 10 SDK
 - SQL Server (LocalDB or SQL Server Express)
 - Docker (optional, for containerized deployment)
 
