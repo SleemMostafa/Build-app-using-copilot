@@ -1,9 +1,12 @@
 using System.Security.Claims;
-using CoffeeRestaurant.Application.Common.Interfaces;
+using CoffeeRestaurant.Domain.Contracts;
 using Microsoft.AspNetCore.Http;
 
 namespace CoffeeRestaurant.Infrastructure.Services;
 
+/// <summary>
+/// Implementation of current user service to access HTTP context user information
+/// </summary>
 public class CurrentUserService : ICurrentUserService
 {
     private readonly IHttpContextAccessor _httpContextAccessor;

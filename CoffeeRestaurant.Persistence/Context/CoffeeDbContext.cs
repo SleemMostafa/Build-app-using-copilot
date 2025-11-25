@@ -1,4 +1,4 @@
-using CoffeeRestaurant.Application.Common.Interfaces;
+using CoffeeRestaurant.Domain.Contracts;
 using CoffeeRestaurant.Domain.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -17,6 +17,18 @@ public class CoffeeDbContext : IdentityDbContext<ApplicationUser>, IApplicationD
     public DbSet<Barista> Baristas { get; set; }
     public DbSet<Order> Orders { get; set; }
     public DbSet<OrderItem> OrderItems { get; set; }
+
+    // Explicit interface implementation for IApplicationDbContext
+    IQueryable<Category> IApplicationDbContext.Categories => Categories;
+    IQueryable<CoffeeItem> IApplicationDbContext.CoffeeItems => CoffeeItems;
+    IQueryable<Customer> IApplicationDbContext.Customers => Customers;
+    IQueryable<Barista> IApplicationDbContext.Baristas => Baristas;
+    IQueryable<Order> IApplicationDbContext.Orders => Orders;
+    IQueryable<OrderItem> IApplicationDbContext.OrderItems => OrderItems;
+
+    void IApplicationDbContext.Add<TEntity>(TEntity entity) => Set<TEntity>().Add(entity);
+    void IApplicationDbContext.Update<TEntity>(TEntity entity) => Set<TEntity>().Update(entity);
+    void IApplicationDbContext.Remove<TEntity>(TEntity entity) => Set<TEntity>().Remove(entity);
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -49,6 +61,9 @@ public class CoffeeDbContext : IdentityDbContext<ApplicationUser>, IApplicationD
             {
                 entry.Entity.UpdatedAt = DateTime.UtcNow;
             }
+
+            // Clear domain events after processing (handled by domain event dispatcher)
+            // entry.Entity.ClearDomainEvents();
         }
 
         return await base.SaveChangesAsync(cancellationToken);

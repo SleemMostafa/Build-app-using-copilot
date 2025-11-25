@@ -118,11 +118,10 @@ builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBeh
 
 // Response classes are defined in each command/query file
 
-// Add Application Services
+// Register services following Clean Architecture principles
+// Domain contracts are implemented by Infrastructure/Persistence layers
 builder.Services.AddScoped<IApplicationDbContext>(provider => provider.GetRequiredService<CoffeeDbContext>());
 builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
-
-// Add Infrastructure Services
 builder.Services.AddScoped<IJwtService, JwtService>();
 
 // Add HttpContextAccessor
@@ -134,6 +133,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();

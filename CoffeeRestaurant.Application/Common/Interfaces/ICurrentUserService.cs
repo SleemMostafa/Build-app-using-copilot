@@ -1,8 +1,2 @@
-namespace CoffeeRestaurant.Application.Common.Interfaces;
-
-public interface ICurrentUserService
-{
-    string? UserId { get; }
-    string? UserName { get; }
-    bool IsAuthenticated { get; }
-}
+// This file has been moved to CoffeeRestaurant.Domain.Contracts.ICurrentUserService
+// Please update your using statements to: using CoffeeRestaurant.Domain.Contracts;

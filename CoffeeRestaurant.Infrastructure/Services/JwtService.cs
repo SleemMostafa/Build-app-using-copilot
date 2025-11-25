@@ -1,6 +1,7 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using CoffeeRestaurant.Application.Common.Interfaces;
 using CoffeeRestaurant.Domain.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
@@ -8,12 +9,9 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace CoffeeRestaurant.Infrastructure.Services;
 
-public interface IJwtService
-{
-    string GenerateToken(ApplicationUser user, IList<string> roles);
-    ClaimsPrincipal? ValidateToken(string token);
-}
-
+/// <summary>
+/// Implementation of JWT service for token generation and validation
+/// </summary>
 public class JwtService : IJwtService
 {
     private readonly IConfiguration _configuration;
